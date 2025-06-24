@@ -146,7 +146,7 @@
         document.getElementById(`fpor${index}`).innerText = ((intervalosGlobales[index].frec / datos.length) * 100).toFixed(2);
         document.getElementById(`grados${index}`).innerText = ((intervalosGlobales[index].frec / datos.length) * 360).toFixed(2);
 
-        // Si es el último FAC correcto, generar gráficas
+        // Si es el Ãºltimo FAC correcto, generar grÃ¡ficas
         const ultimosFAC = document.querySelectorAll("#tablaFrecuencias tbody input[type='number']");
         const todosCorrectos = Array.from(ultimosFAC).every((inp, i) => {
           let esperado = 0;
@@ -208,6 +208,6 @@
 
     crearTablaPesos();
   </script>
-<a href="Menub.html" class="btn-regreso">Volver al Menú</a>
+<a href="index.html" class="btn-regreso">Volver al MenÃº</a>
 </body>
 </html>
