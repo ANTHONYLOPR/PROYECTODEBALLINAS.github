@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Calculadora Estadística COVID-19</title>
+  <title>Calculadora EstadÃ­stica COVID-19</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -50,7 +50,7 @@
 </head>
 <body>
 
-<h2>Calculadora Estadística: Casos COVID-19</h2>
+<h2>Calculadora EstadÃ­stica: Casos COVID-19</h2>
 
 <h3>Edades registradas (20 datos)</h3>
 <div id="inputs" style="text-align:center;">
@@ -61,14 +61,14 @@
 </div>
 
 <div style="text-align:center; margin: 20px 0;">
-  <button onclick="calcularEstadisticas()">Calcular Estadísticas</button>
+  <button onclick="calcularEstadisticas()">Calcular EstadÃ­sticas</button>
 </div>
 
 <h3>Resultados</h3>
 <table>
   <thead>
     <tr>
-      <th>Bloque Estadístico</th>
+      <th>Bloque EstadÃ­stico</th>
       <th>Resultado</th>
     </tr>
   </thead>
@@ -99,7 +99,7 @@ function calcularEstadisticas() {
   const min = Math.min(...datos);
   const max = Math.max(...datos);
   const rango = max - min;
-  const k = Math.ceil(Math.sqrt(n)); // Número de intervalos
+  const k = Math.ceil(Math.sqrt(n)); // NÃºmero de intervalos
   const intervalo = Math.ceil(rango / k);
 
   const promedio = +(datos.reduce((a, b) => a + b, 0) / n).toFixed(2);
@@ -124,27 +124,27 @@ function calcularEstadisticas() {
   // Coeficientes
   const coefVariacion = +((desvEstandar / promedio) * 100).toFixed(2);
 
-  // Simetría y curtosis (aproximaciones)
+  // SimetrÃ­a y curtosis (aproximaciones)
   const asimetria = +((3 * (promedio - mediana)) / desvEstandar).toFixed(2);
   const curtosis = +(n * datos.reduce((a, x) => a + Math.pow(x - promedio, 4), 0) / (Math.pow(varianza, 2) * n)).toFixed(2);
 
   const resultados = [
-    ["Número de intervalos", k],
-    ["Tamaño de intervalo", intervalo],
+    ["NÃºmero de intervalos", k],
+    ["TamaÃ±o de intervalo", intervalo],
     ["Intervalo de mayor contagio", `${min}-${min + intervalo - 1}`],
     ["Intervalo de menor contagio", `${max - intervalo + 1}-${max}`],
     ["Moda", moda],
     ["Mediana", mediana],
     ["Promedio de edad de contagio", promedio],
-    ["Desviación media", desvMedia],
+    ["DesviaciÃ³n media", desvMedia],
     ["Varianza", varianza],
-    ["Desviación estándar", desvEstandar],
+    ["DesviaciÃ³n estÃ¡ndar", desvEstandar],
     ["Rango", rango],
-    ["Edad ubicada a ¾ de la población", pos3_4],
-    ["Edad ubicada en 7/10 de la población", pos7_10],
-    ["Edad ubicada en el lugar 58/100 de la población", pos58_100],
-    ["Coeficiente de variación", coefVariacion + " %"],
-    ["Coeficiente de asimetría", asimetria],
+    ["Edad ubicada a Â¾ de la poblaciÃ³n", pos3_4],
+    ["Edad ubicada en 7/10 de la poblaciÃ³n", pos7_10],
+    ["Edad ubicada en el lugar 58/100 de la poblaciÃ³n", pos58_100],
+    ["Coeficiente de variaciÃ³n", coefVariacion + " %"],
+    ["Coeficiente de asimetrÃ­a", asimetria],
     ["Coeficiente de Curtosis", curtosis]
   ];
 
@@ -153,6 +153,6 @@ function calcularEstadisticas() {
     `<tr><td>${clave}</td><td>${valor}</td></tr>`).join("");
 }
 </script>
-<a href="Menub.html" class="btn-regreso">Volver al Menú</a>
+<a href="index.html" class="btn-regreso">Volver al MenÃº</a>
 </body>
 </html>
